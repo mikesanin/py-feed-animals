@@ -1,10 +1,10 @@
 class Animal:
     def __init__(
-    self, 
-    name: str, 
-    appetite: int, 
-    is_hungry: bool = True
-) -> None:
+            self, 
+            name: str, 
+            appetite: int, 
+            is_hungry: bool = True
+        ) -> None:
 
         self.name = name
         self.appetite = appetite
@@ -38,5 +38,8 @@ class Dog(Animal):
 
 
 def feed_animals(animals: list[Animal]) -> int:
+    total_food = sum(animal.feed() for animal in animals)
+    return total_food
+
     total_food = sum(animal.feed() for animal in animals)
     return total_food
